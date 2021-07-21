@@ -1,0 +1,70 @@
+{
+  "name": "ipnote",
+  "version": "1.0.0",
+  "description": "Gulp start boilerplate",
+  "scripts": {
+    "dev": "gulp watch",
+    "build:dev": "gulp build",
+    "build:prod": "gulp build --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blackwh1te/ipnote.git"
+  },
+  "keywords": [
+    "gulp",
+    "js",
+    "postcss",
+    "linters"
+  ],
+  "browserslist": [
+    "> 0.1%",
+    "IE 11"
+  ],
+  "author": "aleksanderlamkov@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blackwh1te/ipnote/issues"
+  },
+  "homepage": "https://github.com/Blackwh1te/ipnote#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/register": "^7.14.5",
+    "autoprefixer": "^10.3.1",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.27.4",
+    "browserify": "^17.0.0",
+    "cssnano": "^5.0.6",
+    "del": "^6.0.0",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-changed": "^4.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-pngquant": "^9.0.2",
+    "postcss": "^8.3.5",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-for": "^2.1.1",
+    "postcss-mixins": "^8.1.0",
+    "postcss-nested": "^5.0.5",
+    "postcss-scss": "^4.0.0",
+    "postcss-simple-vars": "^6.0.3",
+    "ress": "^4.0.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "swiper": "^6.7.5",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {}
+}

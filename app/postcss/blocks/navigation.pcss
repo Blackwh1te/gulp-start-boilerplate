@@ -1,0 +1,56 @@
+@import "../variables.pcss";
+@import "../media.pcss";
+@import "../helpers.pcss";
+
+.navigation {
+	display: flex;
+	align-items: center;
+
+	@media (--tablet-s) {
+		flex-direction: column;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+
+		@media (--tablet-s) {
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 48px;
+
+			@media (--tablet) {
+				margin-right: 30px;
+			}
+
+			@media (--tablet-s) {
+				margin-right: 0;
+				margin-bottom: 2px;
+			}
+		}
+	}
+
+	&__link {
+		--paddingY: 10px;
+
+		@mixin hover-border-left;
+
+		padding-top: var(--paddingY);
+		padding-bottom: var(--paddingY);
+		color: var(--c-black);
+		text-decoration: none;
+
+		&:before {
+			bottom: 5px;
+			background-color: var(--c-accent);
+		}
+
+		&:hover {
+			color: var(--c-accent);
+		}
+	}
+}

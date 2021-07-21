@@ -1,0 +1,19 @@
+@import "../variables.pcss";
+@import "../media.pcss";
+@import "../helpers.pcss";
+
+.logo {
+	&__link {
+		display: flex;
+
+		&:hover {
+			transform: scale(1.025) translateZ(0);
+		}
+	}
+
+	&__image {
+		@media (--mobile) {
+			max-width: 115px;
+		}
+	}
+}
