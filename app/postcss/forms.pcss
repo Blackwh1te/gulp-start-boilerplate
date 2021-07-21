@@ -1,0 +1,170 @@
+@import "./variables.pcss";
+@import "./media.pcss";
+@import "./helpers.pcss";
+@import "./animations.pcss";
+
+.radio,
+.checkbox {
+	position: relative;
+	font-size: 14px;
+	line-height: 1.2;
+
+	&:hover {
+		.radio,
+		.checkbox {
+			&__icon {
+				border-color: var(--c-orange);
+			}
+		}
+	}
+
+	&__input {
+		@mixin visually-hidden;
+
+		&:checked {
+			& ~ .radio,
+			& ~ .checkbox {
+				&__icon {
+					border-color: var(--c-orange);
+
+					&::after {
+						@mixin show;
+
+						transform: translate(-50%, -50%) scale(1);
+					}
+				}
+			}
+		}
+
+		&[disabled] {
+			& ~ .radio,
+			& ~ .checkbox {
+				&__icon {
+					border-color: var(--c-gray-2);
+					cursor: not-allowed;
+				}
+			}
+
+			&:checked {
+				& ~ .radio,
+				& ~ .checkbox {
+					&__icon::after {
+						background-color: var(--c-gray-2);
+					}
+				}
+			}
+		}
+
+		&:focus-visible {
+			& ~ .radio,
+			& ~ .checkbox {
+				&__label {
+					transition: initial;
+					outline: 2px dashed var(--c-black);
+					outline-offset: 2px;
+				}
+			}
+		}
+	}
+
+	&__icon,
+	&__label {
+		cursor: pointer;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: var(--checkboxSize);
+		height: var(--checkboxSize);
+		border: var(--checkboxBorder);
+		border-radius: var(--checkboxBorderRadius);
+
+		&::after {
+			@mixin hide;
+
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 50%;
+			height: 50%;
+			transform: translate(-50%, -50%) scale(0);
+			background-color: var(--c-orange);
+			border-radius: inherit;
+		}
+	}
+
+	&__label {
+		display: inline-block;
+		padding-left: calc(var(--checkboxSize) + var(--checkboxSize) / 2);
+	}
+}
+
+.radio__icon {
+	border-radius: 50%;
+}
+
+.form-item {
+	position: relative;
+	width: 100%;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+.form-input {
+	position: relative;
+	width: 100%;
+	height: var(--inputHeight);
+	padding: var(--inputPadding);
+	border-bottom: 1px solid var(--c-black);
+
+	&:not(:placeholder-shown) + .form-label {
+		@mixin show;
+
+		bottom: 100%;
+	}
+
+	&--textarea {
+		@mixin custom-scrollbar var(--c-gray-3);
+
+		&::-webkit-scrollbar {
+			width: 4px;
+			height: 4px;
+		}
+
+		resize: none;
+	}
+
+	&::placeholder {
+		color: var(--c-black);
+	}
+
+	&:hover:not(:focus) {
+		border-color: var(--c-yellow-3);
+
+		&::placeholder,
+		& ~ .form-label {
+			color: var(--c-yellow-3);
+		}
+	}
+
+	&:focus {
+		border-color: var(--c-yellow-1);
+
+		&::placeholder,
+		& ~ .form-label {
+			color: var(--c-black);
+		}
+	}
+}
+
+.form-label {
+	@mixin hide;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 0.75em;
+}
