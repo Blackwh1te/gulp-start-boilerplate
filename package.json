@@ -1,7 +1,7 @@
 {
-  "name": "gulp-start-boilerplate",
+  "name": "ipnote",
   "version": "1.0.0",
-  "description": "Gulp start boilerplate",
+  "description": "ipnote",
   "scripts": {
     "dev": "gulp watch",
     "build:dev": "gulp build",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Blackwh1te/gulp-start-boilerplate.git"
+    "url": "git+https://github.com/Blackwh1te/ipnote.git"
   },
   "keywords": [
     "gulp",
@@ -24,9 +24,9 @@
   "author": "aleksanderlamkov@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Blackwh1te/gulp-start-boilerplate/issues"
+    "url": "https://github.com/Blackwh1te/ipnote/issues"
   },
-  "homepage": "https://github.com/Blackwh1te/gulp-start-boilerplate#readme",
+  "homepage": "https://github.com/Blackwh1te/ipnote#readme",
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
@@ -60,9 +60,11 @@
     "postcss-scss": "^4.0.0",
     "postcss-simple-vars": "^6.0.3",
     "ress": "^4.0.0",
+    "scroll-into-view": "^1.16.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "swiper": "^6.7.5",
+    "tua-body-scroll-lock": "^1.2.1",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },

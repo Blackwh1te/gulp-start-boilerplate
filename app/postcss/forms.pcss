@@ -3,168 +3,97 @@
 @import "./helpers.pcss";
 @import "./animations.pcss";
 
-.radio,
-.checkbox {
-	position: relative;
-	font-size: 14px;
-	line-height: 1.2;
+.form {
+  &__body {
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
 
-	&:hover {
-		.radio,
-		.checkbox {
-			&__icon {
-				border-color: var(--c-orange);
-			}
-		}
-	}
+  &__footer .form__item:not(:last-child) {
+    margin-bottom: 16px;
+  }
 
-	&__input {
-		@mixin visually-hidden;
+  &__item {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.2;
 
-		&:checked {
-			& ~ .radio,
-			& ~ .checkbox {
-				&__icon {
-					border-color: var(--c-orange);
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
 
-					&::after {
-						@mixin show;
+  &__input {
+    position: relative;
+    width: 100%;
+    height: var(--inputHeight);
+    padding: var(--inputPadding);
+    background-color: var(--inputBgColor);
+    border-radius: var(--inputBorderRadius);
 
-						transform: translate(-50%, -50%) scale(1);
-					}
-				}
-			}
-		}
+    &:not(:placeholder-shown) ~ .form__label {
+      @mixin hide;
+    }
 
-		&[disabled] {
-			& ~ .radio,
-			& ~ .checkbox {
-				&__icon {
-					border-color: var(--c-gray-2);
-					cursor: not-allowed;
-				}
-			}
+    &--textarea {
+      @mixin custom-scrollbar var(--c-gray-3);
 
-			&:checked {
-				& ~ .radio,
-				& ~ .checkbox {
-					&__icon::after {
-						background-color: var(--c-gray-2);
-					}
-				}
-			}
-		}
+      height: 96px;
 
-		&:focus-visible {
-			& ~ .radio,
-			& ~ .checkbox {
-				&__label {
-					transition: initial;
-					outline: 2px dashed var(--c-black);
-					outline-offset: 2px;
-				}
-			}
-		}
-	}
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
 
-	&__icon,
-	&__label {
-		cursor: pointer;
-	}
+      resize: none;
+    }
 
-	&__icon {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: var(--checkboxSize);
-		height: var(--checkboxSize);
-		border: var(--checkboxBorder);
-		border-radius: var(--checkboxBorderRadius);
+    &::placeholder {
+      color: var(--c-black);
+    }
 
-		&::after {
-			@mixin hide;
+    &:hover:not(:focus) {
+      border-color: var(--c-yellow-3);
 
-			content: "";
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 50%;
-			height: 50%;
-			transform: translate(-50%, -50%) scale(0);
-			background-color: var(--c-orange);
-			border-radius: inherit;
-		}
-	}
+      &::placeholder,
+      & ~ .form__label {
+        color: var(--c-yellow-3);
+      }
+    }
 
-	&__label {
-		display: inline-block;
-		padding-left: calc(var(--checkboxSize) + var(--checkboxSize) / 2);
-	}
-}
+    &:focus {
+      border-color: var(--c-yellow-1);
 
-.radio__icon {
-	border-radius: 50%;
-}
+      &::placeholder,
+      & ~ .form-label {
+        color: var(--c-black);
+      }
+    }
+  }
 
-.form-item {
-	position: relative;
-	width: 100%;
-	font-size: 14px;
-	line-height: 1.2;
-}
+  &__label {
+    position: absolute;
+    top: 13px;
+    left: var(--inputPaddingX);
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--c-gray-1);
+  }
 
-.form-input {
-	position: relative;
-	width: 100%;
-	height: var(--inputHeight);
-	padding: var(--inputPadding);
-	border-bottom: 1px solid var(--c-black);
+  &__star-required {
+    color: var(--c-accent);
+  }
 
-	&:not(:placeholder-shown) + .form-label {
-		@mixin show;
+  &__agreement {
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--c-gray-1);
 
-		bottom: 100%;
-	}
-
-	&--textarea {
-		@mixin custom-scrollbar var(--c-gray-3);
-
-		&::-webkit-scrollbar {
-			width: 4px;
-			height: 4px;
-		}
-
-		resize: none;
-	}
-
-	&::placeholder {
-		color: var(--c-black);
-	}
-
-	&:hover:not(:focus) {
-		border-color: var(--c-yellow-3);
-
-		&::placeholder,
-		& ~ .form-label {
-			color: var(--c-yellow-3);
-		}
-	}
-
-	&:focus {
-		border-color: var(--c-yellow-1);
-
-		&::placeholder,
-		& ~ .form-label {
-			color: var(--c-black);
-		}
-	}
-}
-
-.form-label {
-	@mixin hide;
-
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	font-size: 0.75em;
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
 }

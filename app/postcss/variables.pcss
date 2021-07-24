@@ -8,9 +8,12 @@
 	--c-main-bright: #3353C1;
 	--c-accent: #F0A93B;
 	--c-additional: #62738D;
+  --c-additional-2: #495974;
 
 	--c-gray-1: #D0D7E1;
 	--c-gray-2: #F3F4F7;
+  --c-gray-3: #8A97AD;
+  --c-gray-4: #EDEFF3;
 
 	--c-overlay: rgba(49, 60, 78, 0.5);
 
@@ -24,7 +27,21 @@
 	--baseLineHeight: 1.4;
 	--baseFontWeight: normal;
 
-	--borderRadius: 8px;
+  --borderRadius: 8px;
+  --borderRadiusLarge: 12px;
+
+  --boxShadow: 0px 0px 20px rgba(43, 93, 162, 0.08),
+               0px 0px 10px rgba(43, 93, 162, 0.06),
+               0px 0px 8px rgba(43, 93, 162, 0.08),
+               inset -4px -4px 4px rgba(43, 93, 162, 0.12),
+               3px 3px 3px rgba(255, 255, 255, 0.2);
+
+  --boxShadow-2: 4px 4px 6px rgba(43, 93, 162, 0.06),
+                 2px 2px 4px rgba(43, 93, 162, 0.08),
+                 inset -2px -2px 4px rgba(43, 93, 162, 0.1);
+
+  --boxShadow-3: 4px 4px 6px rgba(43, 93, 162, 0.06);
+
 	--transition-all: all 0.3s ease-in-out;
 	--transition-glow: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 
@@ -34,5 +51,9 @@
 	--btnBorderRadius: var(--borderRadius);
 
 	--inputHeight: 48px;
-	--inputPadding: 13px 20px;
+  --inputPaddingX: 20px;
+  --inputPaddingY: 13px;
+  --inputPadding: var(--inputPaddingY) var(--inputPaddingX);
+  --inputBgColor: var(--c-white);
+  --inputBorderRadius: var(--borderRadius);
 }
