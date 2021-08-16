@@ -1,3 +1,11 @@
 {
-  "extends": "stylelint-config-standard"
+  "plugins": [
+    "stylelint-value-no-unknown-custom-properties"
+  ],
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-no-unknown": null,
+    "no-descending-specificity": false,
+    "csstools/value-no-unknown-custom-properties": null
+  }
 }

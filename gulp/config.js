@@ -1,5 +1,5 @@
-const srcPath = 'app';
-const destPath = 'build';
+const srcPath = 'app'
+const destPath = 'build'
 
 const config = {
   src: {
@@ -9,8 +9,10 @@ const config = {
     js: `${srcPath}/js`,
     fonts: `${srcPath}/fonts`,
     images: `${srcPath}/images`,
-    icons: `${srcPath}/icons`,
+    // icons: `${srcPath}/icons`,
     favicons: `${srcPath}/favicons`,
+    iconsMono: `${srcPath}/icons/mono`,
+    iconsMulti: `${srcPath}/icons/multi`,
   },
 
   dest: {
@@ -20,14 +22,14 @@ const config = {
     js: `${destPath}/js`,
     fonts: `${destPath}/fonts`,
     images: `${destPath}/images`,
-    icons: `${destPath}/icons`,
+    // icons: `${destPath}/icons`,
     favicons: `${destPath}/favicons`,
   },
 
   setEnv() {
-    this.isProd = process.argv.includes('--prod');
-    this.isDev = !this.isProd;
-  }
-};
+    this.isProd = process.argv.includes('--prod')
+    this.isDev = !this.isProd
+  },
+}
 
-export default config;
+export default config

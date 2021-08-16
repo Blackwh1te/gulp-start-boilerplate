@@ -2,61 +2,65 @@
 @import "./media.pcss";
 
 @define-mixin fluid-text $max: 72, $min: 14 {
-	font-size: calc($(min)px + ($max - $min) * ((100vw - 320px) / (1440 - 320)));
+  font-size: calc($(min)px + ($max - $min) * ((100vw - 320px) / (1920 - 320)));
+
+  @media (--desktop-xl-above) {
+    font-size: $(max);
+  }
 }
 
 @define-mixin hide {
-	opacity: 0;
-	visibility: hidden;
-	backface-visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
+  backface-visibility: hidden;
 }
 
 @define-mixin show {
-	opacity: 1;
-	visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 @define-mixin line-clamp $max: 1 {
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: $max;
-	overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $max;
+  overflow: hidden;
 }
 
 @define-mixin visually-hidden {
-	position: absolute !important;
-	clip: rect(1px, 1px, 1px, 1px);
-	padding: 0 !important;
-	border: 0 !important;
-	height: 1px !important;
-	width: 1px !important;
-	overflow: hidden;
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
 
 @define-mixin flex-cols $cols: 2, $margin: 20px {
-	margin-left: calc($(margin) / 2 * -1);
-	margin-right: calc($(margin) / 2 * -1);
+  margin-left: calc($(margin) / 2 * -1);
+  margin-right: calc($(margin) / 2 * -1);
 
-	& > * {
-		width: calc(calc(100% / $(cols)) + calc($(margin) / 2 * calc($(cols) * -1)));
-		margin-left: calc($(margin) / 2);
-		margin-right: calc($(margin) / 2);
-	}
+  & > * {
+    width: calc(calc(100% / $(cols)) + calc($(margin) / 2 * calc($(cols) * -1)));
+    margin-left: calc($(margin) / 2);
+    margin-right: calc($(margin) / 2);
+  }
 }
 
 @define-mixin custom-scrollbar $scrollBackgroundColor: transparent, $thumbColor: var(--c-orange) {
-	scrollbar-color: $thumbColor $scrollBackgroundColor;
-	scrollbar-width: auto;
+  scrollbar-color: $thumbColor $scrollBackgroundColor;
+  scrollbar-width: auto;
 
-	&::-webkit-scrollbar {
-		width: 8px;
-		height: 8px;
-		background-color: $scrollBackgroundColor;
-	}
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: $scrollBackgroundColor;
+  }
 
-	&::-webkit-scrollbar-thumb {
-		background-color: $thumbColor;
-	}
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumbColor;
+  }
 }
 
 @define-mixin fade-up $durationOpacity: 2.4s, $durationTranform: 1.2s, $delay: 0.25s, $timingFunction: ease {
@@ -64,11 +68,11 @@
     @mixin hide;
 
     transform: translate3d(0, 100px, 0);
-    transition-timing-function: $(timingFunction);
+    transition-timing-function: $(timingfunction);
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -91,11 +95,11 @@
     @mixin hide;
 
     transform: translate3d(0, -100px, 0);
-    transition-timing-function: $(timingFunction);
+    transition-timing-function: $(timingfunction);
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -118,11 +122,11 @@
     @mixin hide;
 
     transform: translate3d(-100px, 0, 0);
-    transition-timing-function: $(timingFunction);
+    transition-timing-function: $(timingfunction);
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -145,11 +149,11 @@
     @mixin hide;
 
     transform: translate3d(100px, 0, 0);
-    transition-timing-function: $(timingFunction);
+    transition-timing-function: $(timingfunction);
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -172,11 +176,11 @@
     @mixin hide;
 
     transform: translate3d(100px, 100px, 0);
-    transition-timing-function: $(timingFunction);
+    transition-timing-function: $(timingfunction);
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -199,11 +203,11 @@
     @mixin hide;
 
     transform: translate3d(-100px, 100px, 0);
-    transition-timing-function: $(timingFunction);
+    transition-timing-function: $(timingfunction);
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -226,11 +230,11 @@
     @mixin hide;
 
     transform: translate3d(100px, -100px, 0);
-    transition-timing-function: $(timingFunction);
+    transition-timing-function: $(timingfunction);
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -253,11 +257,11 @@
     @mixin hide;
 
     transform: translate3d(-100px, -100px, 0);
-    transition-timing-function: $(timingFunction);
+    transition-timing-function: $(timingfunction);
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -284,7 +288,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -311,7 +315,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -338,7 +342,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -365,7 +369,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -392,7 +396,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -419,7 +423,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -446,7 +450,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -473,7 +477,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -500,7 +504,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -527,7 +531,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -554,7 +558,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -581,7 +585,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -608,7 +612,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -635,7 +639,7 @@
     transition-property: opacity, transform;
 
     .dom-is-ready & {
-      transition-duration: $(durationOpacity), $(durationTranform);
+      transition-duration: $(durationopacity), $(durationtranform);
     }
   }
 
@@ -654,21 +658,21 @@
 }
 
 @define-mixin hover-border-left {
-	position: relative;
+  position: relative;
 
-	&::before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background-color: currentColor;
-	}
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+  }
 
-	&:hover:before {
-		width: 100%;
-	}
+  &:hover::before {
+    width: 100%;
+  }
 }
 
 @define-mixin hover-shine {

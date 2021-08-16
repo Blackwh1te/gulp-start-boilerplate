@@ -2,5 +2,11 @@
   "extends": "airbnb-base",
   "env": {
     "browser": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/prefer-default-export": "off",
+    "arrow-body-style": [2, "always"],
+    "semi": ["error", "never"]
   }
 }
