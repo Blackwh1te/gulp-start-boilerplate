@@ -1,5 +1,5 @@
-import browserSync from 'browser-sync';
-import config from '../config';
+import browserSync from 'browser-sync'
+import config from '../config'
 
 const server = (callback) => {
   browserSync.create().init({
@@ -12,10 +12,10 @@ const server = (callback) => {
       `${config.dest.js}/*.js`,
     ],
     open: false,
-    notify: false
-  });
+    notify: false,
+  })
 
-  callback();
-};
+  callback()
+}
 
-export default server;
+export default server

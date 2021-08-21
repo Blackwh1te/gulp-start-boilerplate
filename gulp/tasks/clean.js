@@ -1,6 +1,6 @@
 import del from 'del'
-import config from '../config';
+import config from '../config'
 
-const clean = () => del(config.dest.root);
+const clean = () => { return del(config.dest.root) }
 
-export default clean;
+export default clean

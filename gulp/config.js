@@ -9,10 +9,7 @@ const config = {
     js: `${srcPath}/js`,
     fonts: `${srcPath}/fonts`,
     images: `${srcPath}/images`,
-    // icons: `${srcPath}/icons`,
-    favicons: `${srcPath}/favicons`,
-    iconsMono: `${srcPath}/icons/mono`,
-    iconsMulti: `${srcPath}/icons/multi`,
+    json: `${srcPath}/json`,
   },
 
   dest: {
@@ -22,8 +19,7 @@ const config = {
     js: `${destPath}/js`,
     fonts: `${destPath}/fonts`,
     images: `${destPath}/images`,
-    // icons: `${destPath}/icons`,
-    favicons: `${destPath}/favicons`,
+    json: `${destPath}/json`,
   },
 
   setEnv() {

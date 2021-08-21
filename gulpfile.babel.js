@@ -7,9 +7,7 @@ import { stylesBuild, stylesWatch } from './gulp/tasks/styles'
 import { htmlBuild, htmlWatch } from './gulp/tasks/html'
 import { fontsBuild, fontsWatch } from './gulp/tasks/fonts'
 import { imagesBuild, imagesWatch } from './gulp/tasks/images'
-// import { iconsBuild, iconsWatch } from './gulp/tasks/icons'
-import { faviconsBuild, faviconsWatch } from './gulp/tasks/favicons'
-import { spritesBuild, spritesWatch } from './gulp/tasks/sprites'
+import { jsonBuild, jsonWatch } from './gulp/tasks/json'
 
 config.setEnv()
 
@@ -21,9 +19,7 @@ export const build = gulp.series(
     htmlBuild,
     fontsBuild,
     imagesBuild,
-    // iconsBuild,
-    faviconsBuild,
-    spritesBuild,
+    jsonBuild,
   ),
 )
 
@@ -36,10 +32,6 @@ export const watch = gulp.series(
     htmlWatch,
     fontsWatch,
     imagesWatch,
-    // iconsWatch,
-    faviconsWatch,
-    spritesWatch,
+    jsonWatch,
   ),
 )
-
-exports.spritesBuild = spritesBuild
